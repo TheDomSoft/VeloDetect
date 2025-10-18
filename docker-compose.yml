@@ -12,5 +12,19 @@ services:
     volumes:
       - minio_data:/data
 
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: velodetect
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
   minio_data:
+  postgres_data:

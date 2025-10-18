@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     MINIO_SECRET_KEY: str
     MINIO_BUCKET: str
     MINIO_SECURE: bool = False
+    DATABASE_URL: str | None = None
 
     class Config:
         env_file = ".env"
